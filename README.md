@@ -19,12 +19,13 @@ sudo chown -R 1000:1000 certs demo-var-www config certs
 sudo chmod 600 certs/cert.pem certs/key.pem
 
 # build ftpserver
-go build
+go build -o ./builds/
 
 # run ftpserver
-./ftpserver -config con
-# on windows:
+./ftpserver -config ./config/ftp.conf
 
+# on windows, you might need to use backward slashes:
+# .\ftpserver.exe -config .\config\ftp.conf
 ```
 
 Use user `ftp` with password `test` and the server `localhost` to access/upload new files.
