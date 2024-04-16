@@ -1,2 +1,4 @@
 demo-var-www/
 certs/
+ftpserver
+!builds/
