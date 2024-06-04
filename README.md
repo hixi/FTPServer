@@ -30,6 +30,13 @@ go build -o ./builds/
 
 Use user `ftp` with password `test` and the server `localhost` to access/upload new files.
 
+## docker build
+
+```bash
+docker compose build
+docker compose push
+```
+
 ## Usage example
 
 We need a base directory to start from, as an example we use:
@@ -89,4 +96,20 @@ Start the service:
 
 ```bash
 ./ftpserver -config ./config/config.json
+```
+
+
+### With Docker
+
+
+``yaml
+# compose.yaml
+services:
+  ftpserver:
+    ports:
+      - '2121-2130:2121-2130'
+    volumes:
+      - ./files:/tmp
+      - .:/app
+    image: njordan/ftpserver
 ```
